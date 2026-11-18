@@ -2,17 +2,17 @@
 
 namespace JeffersonGoncalves\Filament\UsPrivacyNotices;
 
+use JeffersonGoncalves\FilamentPluginCore\BasePackageServiceProvider;
 use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
 
-class UsPrivacyNoticesServiceProvider extends PackageServiceProvider
+class UsPrivacyNoticesServiceProvider extends BasePackageServiceProvider
 {
+    public static string $name = 'filament-us-privacy-notices';
+
     public function configurePackage(Package $package): void
     {
         $package
-            ->name('filament-us-privacy-notices')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigrations();
+            ->name(static::$name)
+            ->hasTranslations();
     }
 }
